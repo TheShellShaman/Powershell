@@ -14,14 +14,12 @@ ForEach($user in $users)
                                      # ignored if isProtected=$false
         $acl.SetAccessRuleProtection($isProtected, $preserveInheritance)
         $dn.psbase.commitchanges()
-        Write-Host($user.SamAccountName + "|" + `
-                   $user.DistinguishedName + `
+        Write-Host($user.SamAccountName + "|" + 
                    "|inheritance set to enabled")
     }
     else
     {
-        write-host($user.SamAccountName + "|" + `
-                   $user.DistinguishedName + `
+        write-host($user.SamAccountName + "|" +
                    "|inheritance already enabled")
     }
 }
